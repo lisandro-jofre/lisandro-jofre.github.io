@@ -27,12 +27,7 @@ gulp.task("styles", function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task("favicon", function () {
-    return gulp.src("./src/favicon.ico")
-        .pipe(gulp.dest("./assets/"))
-});
-
-gulp.task("build", ["index", "styles", "favicon"]);
+gulp.task("build", ["index", "styles"]);
 
 gulp.task("serve", ["build"], function () {
     browserSync.init({
