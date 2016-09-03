@@ -23,7 +23,7 @@ gulp.task("styles", function () {
         	includePaths: reset.includePath
         }))
         .pipe(cssmin())
-        .pipe(gulp.dest("./assets/"))
+        .pipe(gulp.dest("./"))
         .pipe(browserSync.stream());
 });
 
