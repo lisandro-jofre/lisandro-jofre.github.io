@@ -17,7 +17,6 @@
 			} else {
 				var homeSection = Object.keys(AppConstants.SECTIONS)[0];
 				$state.go("section", {section: AppConstants.SECTIONS[homeSection].ROUTE_PARAMS.SECTION});
-				return;
 			}
 		});
 })();
