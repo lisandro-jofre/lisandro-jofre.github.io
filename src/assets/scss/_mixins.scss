@@ -6,7 +6,7 @@
 }
 
 @mixin font($weight, $size, $family: $serifFontFamily) {
-  font: $weight $size $family;
+	font: $weight $size $family;
 }
 
 @mixin logo($size, $color: $whiteColor) {
@@ -19,8 +19,8 @@
 
 @mixin transition($property: "all", $timeInSeconds: "1", $speedCurve: "ease", $delay: "0") {
 	-webkit-transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
-    -moz-transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
-    -o-transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
-    transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
-    color: $delay;
+	-moz-transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
+	-o-transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
+	transition: #{$property} #{$timeInSeconds}s #{$speedCurve} #{$delay}s;
+	color: $delay;
 }
