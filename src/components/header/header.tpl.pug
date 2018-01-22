@@ -1,7 +1,7 @@
 header
 
 	h1(title="Lisandro Jofré")
-		span.logo
+		a.logo(ui-sref="section({section: \"home\"})")
 
 	button(ng-click="$ctrl.toggleNav()" ng-switch="$ctrl.isNavOpen")
 		app-icon(icon="menu" ng-switch-when="false")
