@@ -1,0 +1,11 @@
+div(ng-repeat="content in $ctrl.content" ng-class="$ctrl.section.DISPLAY_NAME.toLowerCase()")
+	
+	h2(ng-if="content.HEADING") {{content.HEADING}}
+		span(ng-if="content.POST_HEADING") {{" @ " + content.POST_HEADING}}
+
+	h3(ng-if="content.SUBHEADING") {{content.SUBHEADING}}
+
+	div(ng-switch="$ctrl.isArray(content.DETAILS)")
+		p(ng-switch-when="false" ng-bind-html="content.DETAILS")
+		ul(ng-switch-when="true")
+			li(ng-repeat="listItem in content.DETAILS" ng-bind-html="listItem")

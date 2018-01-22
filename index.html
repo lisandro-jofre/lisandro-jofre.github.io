@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Personal resume for screen/print media.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lisandro Jofré</title>
+    <link href="build/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="build/assets/img/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Roboto+Slab:100,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/bundle.css">
+  </head>
+  <body ng-app="app" ng-class="{'nav-open': isNavOpen}">
+    <ng-include src="'build/assets/img/icons.svg'"></ng-include>
+    <main ng-style="{'background-color': bgColor}">
+      <app-header></app-header>
+      <section ui-view="content"></section>
+    </main>
+    <script src="build/vendors/angular.min.js"></script>
+    <script src="build/vendors/angular-ui-router.min.js"></script>
+    <script src="build/vendors/angular-sanitize.min.js"></script>
+    <script src="build/vendors/angular-animate.min.js"></script>
+    <script src="build/bundle.js"></script>
+  </body>
+</html>

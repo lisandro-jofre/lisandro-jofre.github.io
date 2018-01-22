@@ -1,0 +1,123 @@
+app-header {
+	width: 100%;
+
+	header {
+		@include flex(center, "", space-between);
+		left: 0;
+	    padding: 20px;
+	    position: absolute;
+	    top: 0;
+	    width: 100%;
+
+		h1 {
+			position: relative;
+			z-index: 1;
+
+			.logo {
+				@include logo(60);
+			}
+		}
+
+		button {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	nav {
+		@include flex(center, column, center);
+	    background: #222;
+	    height: 100%;
+	    left: 0;
+		position: absolute;
+	    top: 0;
+	    width: 100%;
+
+	    &.ng-enter {
+	    	@include transition(all, .25, ease-in-out);
+			transform: translateY(100%);
+
+	    	&.ng-enter-active {
+	    		transform: translateY(0);
+	    	}
+	    }
+
+	    &.ng-leave {
+	    	@include transition(all, .25, ease-in-out);
+
+			&.ng-leave-active {
+				transform: translateY(-100%);
+			}
+	    }
+	    
+	    a {
+	    	@include font(700, 35px, $sansSerifFontFamily);
+			@include transition(color, .25, ease-out);
+	    	color: #999;
+    	    margin: 15px;
+		    text-align: center;
+
+			@for $i from 0 through 5 {
+				&:nth-child(#{$i}) {
+		    		@include transition(all, .75, "", #{$i/15});
+
+					&.ng-enter {
+				    	opacity: 0;
+						transform: translateX(25px);
+
+						&.ng-enter-active {
+							opacity: 1;
+							transform: translateX(0);
+						}
+				    }
+				}
+			}
+
+			&:hover,
+			&.active {
+				color: $whiteColor;
+			}
+	    }
+	}
+}
+
+@media screen and (min-width: $tabletMediaBreakpoint) {
+	
+	app-header {
+
+		nav {
+			flex-direction: row;
+
+			a {
+				@for $i from 0 through 5 {
+					&:nth-child(#{$i}) {
+
+						&.ng-enter {
+							transform: translateY(25px);
+
+							&.ng-enter-active {
+								transform: translateY(0);
+							}
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $desktopMediaBreakpoint) {
+
+	app-header {
+
+		header {
+			padding: 20px 40px;
+
+			h1 {
+				.logo {
+					@include logo(80);
+				}
+			}
+		}
+	}
+}
